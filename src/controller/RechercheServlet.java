@@ -23,11 +23,10 @@ public class RechercheServlet extends HttpServlet {
         String phrase = request.getParameter("phrase");
         String[] mots = phrase.split(" ");
         int limit = 0;
-        for (int i = 0; i < mots.length; i++) {
+        for (String mot : mots) {
             try {
-                limit = Integer.parseInt(mots[i]);
-            }
-            catch (Exception e) {
+                limit = Integer.parseInt(mot);
+            } catch (Exception ignored) {
 
             }
         }
